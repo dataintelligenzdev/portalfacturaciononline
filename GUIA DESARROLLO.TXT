@@ -1,0 +1,11 @@
+GUIA DESARROLLO.TXT
+
+composer create-project laravel/laravel portalFacturacionOnline
+composer require laravel/jetstream
+php artisan jetstream:install livewire
+npm install && npm run dev
+composer require laravelcollective/html
+git init
+git add .
+git commit -m "Commit Inicial"
+
