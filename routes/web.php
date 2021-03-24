@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::view('/dashboard','empresas.index')->name('dashboard');
+    Route::view('/empresas','empresas.index')->name('empresas');
+    Route::view('/metodo_pagos','metodo_pagos.index')->name('metodo_pagos');
+});

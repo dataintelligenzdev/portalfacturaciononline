@@ -5,7 +5,14 @@ composer require laravel/jetstream
 php artisan jetstream:install livewire
 npm install && npm run dev
 composer require laravelcollective/html
+composer require intervention/image
 git init
 git add .
 git commit -m "Commit Inicial"
+git remote add origin https://gitlab.com/sanchezpadillalaura/portalfacturaciononline.git
+git push -u origin master
+php artisan serve
 
+php artisan storage:link
+php artisan make:model Empresa -mf
+php artisan make:model MetodoPago -mf
