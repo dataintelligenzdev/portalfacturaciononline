@@ -183,14 +183,16 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
+                            @auth
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name_complete }}</span>
                                 @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                                 <img class="img-profile rounded-circle"
                                     src="{{ Auth::user()->profile_photo_url }}">
                                 @endif
                             </a>
+                            @endauth
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">

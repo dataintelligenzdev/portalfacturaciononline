@@ -20,7 +20,7 @@ class EmpresaComponent extends Component
     public $password;
     public $image_path;
     public $endpoint;
-    public $status;
+    public $status='1';
 
 
     //variables para fucnionalidades
@@ -37,9 +37,9 @@ class EmpresaComponent extends Component
                 ->orWhere('user','LIKE','%'.$this->search.'%');
             })
             ->latest()
-            ->paginate(5);
+            ->paginate();
         }else{
-            $list_empresas = Empresa::latest()->paginate(5);
+            $list_empresas = Empresa::latest()->paginate();
         }
         return view('livewire.empresa-component', compact('list_empresas'));
     }
